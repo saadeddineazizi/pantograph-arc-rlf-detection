@@ -1,0 +1,27 @@
+{
+ "R1": 0.005,
+ "R1_dev": 0.863461875,
+ "R4": 0.005,
+ "R4_dev": 0.6604034722222222,
+ "L1": 0.0001,
+ "L1_dev": 0.85064,
+ "LQE": 0.0001,
+ "LQE_dev": 0.6270936805555556,
+ "CC": 0.1,
+ "CC_dev": 0.9203196296296295,
+ "CR": [
+  -10.0,
+  0.01
+ ],
+ "CR_dev": 0.7342758333333333,
+ "eta_TLRmix": 0.99,
+ "TLRmix_dev": 0.6739698148148149,
+ "eta_TLRmixSR": 0.99,
+ "TLRmixSR_dev": 0.6313085416666667,
+ "delta": 0.003,
+ "sr_window": 300,
+ "sre_lam": 0.002,
+ "sre_q": 0.05,
+ "lstm_rate": 0.05,
+ "edge_note": "R1, R4, L1, CR, LQE optima moved to the no-forgetting limit over three development passes; the frozen values are the smallest tested; the eta curve is flat above 0.95."
+}

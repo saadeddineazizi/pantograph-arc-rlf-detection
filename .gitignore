@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+logs19/*.log
+data/Raw_BPL/
+out_v19/sncf/base.pkl

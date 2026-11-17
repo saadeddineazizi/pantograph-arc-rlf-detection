@@ -1,0 +1,207 @@
+held lossonly clean
+held lossonly sd8
+held nodip clean
+held dipsonly clean
+held dipsonly sd8
+held dbg clean
+held ge1 clean
+held ge1 sd8
+held depthvar sd8
+held convex sd8
+held step sd8
+held fast sd8
+held plexp25 clean
+held shadowing sd4t5
+held shadowing sd12t60
+phy phy_short clean
+phy phy_short sd8
+phy phy_ge1 clean
+phy phy_nexp3 clean
+phy phy_rail sd4
+phy phy_rail_ge1 sd4
+devfresh main clean
+devfresh main sd8
+devfresh iid1 clean
+devfresh iid1 sd8
+devfresh ge3 clean
+devfresh ge3 sd8
+conf 600
+conf 601
+conf 602
+conf 603
+conf 604
+conf 605
+conf 606
+conf 607
+conf 608
+conf 609
+conf 610
+conf 611
+conf 612
+conf 613
+conf 614
+conf 615
+conf 616
+conf 617
+conf 618
+conf 619
+conf 620
+conf 621
+conf 622
+conf 623
+conf 624
+conf 625
+conf 626
+conf 627
+conf 628
+conf 629
+conf 630
+conf 631
+conf 632
+conf 633
+conf 634
+conf 635
+conf 636
+conf 637
+conf 638
+conf 639
+conf 640
+conf 641
+conf 642
+conf 643
+conf 644
+conf 645
+conf 646
+conf 647
+conf 648
+conf 649
+conf 650
+conf 651
+conf 652
+conf 653
+conf 654
+conf 655
+conf 656
+conf 657
+conf 658
+conf 659
+conf 660
+conf 661
+conf 662
+conf 663
+conf 664
+conf 665
+conf 666
+conf 667
+conf 668
+conf 669
+conf 670
+conf 671
+conf 672
+conf 673
+conf 674
+conf 675
+conf 676
+conf 677
+conf 678
+conf 679
+conf 680
+conf 681
+conf 682
+conf 683
+conf 684
+conf 685
+conf 686
+conf 687
+conf 688
+conf 689
+conf 690
+conf 691
+conf 692
+conf 693
+conf 694
+conf 695
+conf 696
+conf 697
+conf 698
+conf 699
+rand 0
+rand 1
+rand 2
+rand 3
+rand 4
+rand 5
+rand 6
+rand 7
+rand 8
+rand 9
+rand 10
+rand 11
+rand 12
+rand 13
+rand 14
+rand 15
+rand 16
+rand 17
+rand 18
+rand 19
+rand 20
+rand 21
+rand 22
+rand 23
+rand 24
+rand 25
+rand 26
+rand 27
+rand 28
+rand 29
+rand 30
+rand 31
+rand 32
+rand 33
+rand 34
+rand 35
+rand 36
+rand 37
+rand 38
+rand 39
+rand 40
+rand 41
+rand 42
+rand 43
+rand 44
+rand 45
+rand 46
+rand 47
+rand 48
+rand 49
+rand 50
+rand 51
+rand 52
+rand 53
+rand 54
+rand 55
+rand 56
+rand 57
+rand 58
+rand 59
+rand 60
+rand 61
+rand 62
+rand 63
+rand 64
+rand 65
+rand 66
+rand 67
+rand 68
+rand 69
+rand 70
+rand 71
+rand 72
+rand 73
+rand 74
+rand 75
+rand 76
+rand 77
+rand 78
+rand 79

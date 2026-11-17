@@ -1,0 +1,15 @@
+v19 hypotheses, written 17 Nov 2026 after out_v19/frozen.json was written and BEFORE any held-out,
+Simulator B or confirmatory run of the v19 detector set. Confirmatory set: 100 regimes drawn by
+sim.draw_regime(INDEX), INDEX 600-699 (never used before). Metric: expected alarm progress at
+alpha = 1e-3 per regime; paired one-sided bootstrap over regimes (10 000 resamples, seed 19);
+Holm correction over H1-H5 at family level 0.05. Subsets by the loss mechanism of draw_regime.
+
+H1  TLR-mix-SR is earlier than TLR-SR on all 100 regimes (mean progress lower).
+H2  TLR-mix-SR is earlier than SRon in the arc-noise regimes.
+H3  TLR-mix-SR is earlier than TLR-SR in the margin-coupled regimes.
+H4  TLR-mix-SR is earlier than SRon on all 100 regimes.
+H5  TLR-mix-SR is earlier than LQE (the best baseline on the development regimes) on all 100 regimes.
+
+Reported whatever the outcome. Everything else (held-out 15, Simulator B, randomized 80 + 30 of
+v17 indices, grid, time scales) is descriptive. Simulator B behaviour of TLR-mix was already seen in
+v17 and is therefore exploratory.
