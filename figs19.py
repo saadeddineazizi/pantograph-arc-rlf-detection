@@ -1,16 +1,16 @@
-"""v19 figures for the paper -> figures/*.pdf"""
+"""v19 figures for the paper -> /home/claude/p1r/src/paper/figures19/*.pdf"""
 import json, glob, os
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-OUT = 'figures'; os.makedirs(OUT, exist_ok=True)
+OUT = os.environ.get('FIGOUT', '/home/claude/p1r/src/paper/figures19'); os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({'font.family': 'serif', 'font.serif': ['Liberation Serif', 'DejaVu Serif'], 'mathtext.fontset': 'stix',
                      'font.size': 8.5, 'axes.linewidth': 0.7, 'legend.fontsize': 7.5, 'savefig.bbox': 'tight', 'savefig.dpi': 300, 'pdf.fonttype': 42, 'ps.fonttype': 42})
 K, G = '#111111', '#777777'
 COL = {'TLRmixSR': '#1b5e9b', 'TLRsr': '#c4581b', 'LQE': '#2e7d32', 'R4': '#8e24aa', 'SRon': '#555555'}
-LAB = {'TLRmixSR': 'TLR-mix-SR', 'TLRsr': 'TLR-SR', 'LQE': 'LQE', 'R4': 'R4', 'SRon': 'SRon'}
+LAB = {'TLRmixSR': 'MFL-SR', 'TLRsr': 'TLR-SR', 'LQE': 'LQE', 'R4': 'R4', 'SRon': 'SRon'}
 
 
 def theory():
@@ -23,7 +23,7 @@ def theory():
     ax[0].set_xlabel('threshold $h$'); ax[0].set_ylabel('mean delay (frames)'); ax[0].legend(frameon=False); ax[0].set_title('(a) Abrupt change')
     T = [r['T'] for r in m['ramp']]
     ax[1].plot(T, [r['median'] for r in m['ramp']], 'o-', color=K, ms=3.5, lw=1, label='median alarm time')
-    ax[1].plot(T, [r['approx'] for r in m['ramp']], 's--', color=G, ms=3.5, lw=1, label='noise-free approximation (9)')
+    ax[1].plot(T, [r['approx'] for r in m['ramp']], 's--', color=G, ms=3.5, lw=1, label='mean-path approximation (11)')
     ax[1].set_xlabel('ramp length $T$ (frames)'); ax[1].set_ylabel('alarm time (frames)'); ax[1].legend(frameon=False); ax[1].set_title('(b) Linear ramp')
     for a in ax:
         for s in ('top', 'right'): a.spines[s].set_visible(False)
@@ -73,7 +73,7 @@ def inject():
     st = {'TLR-ord': ('o-', '#c4581b'), 'TLR-mix-ord': ('o-', '#1b5e9b'), 'SRe-ord': ('s--', '#555555'), 'SRon-ord': ('s-', '#999999'), 'L1': ('^:', '#2e7d32')}
     for i, cfg in enumerate(('base', 'typical')):
         for d, (mk, c) in st.items():
-            ax[i].plot([1, 2, 4, 8], [R[f'{cfg}_{l}'][d]['det05'] for l in (1, 2, 4, 8)], mk, color=c, ms=3.2, lw=1, label=d)
+            ax[i].plot([1, 2, 4, 8], [R[f'{cfg}_{l}'][d]['det05'] for l in (1, 2, 4, 8)], mk, color=c, ms=3.2, lw=1, label=d.replace('TLR-mix-ord', 'MFL-ord'))
         ax[i].set_xscale('log', base=2); ax[i].set_xticks([1, 2, 4, 8]); ax[i].set_xticklabels(['1', '2', '4', '8'])
         ax[i].set_xlabel('terminal arc rate (arcs/s)'); ax[i].set_ylim(0, 1.03)
         ax[i].set_title(['(a) Long arcs (median 30 ms)', '(b) Typical arcs (median 3.6 ms, rate x 7.3)'][i])

@@ -1,6 +1,6 @@
 # Calibrated detection of pantograph-arcing radio link degradation
 
-Code and result files for the article "Calibrated Detection of Pantograph-Arcing Radio Link Degradation with a Margin-Free Mixture Likelihood: A Regime Map from Simulation and Arc Injection, with False-Alarm Calibration on a Real GSM-R Log" (S. E. Azizi, Z. Yu, S. Azizi).
+Code and result files for the article "Margin-Free Detection of Pantograph-Arc Radio Link Degradation with Calibrated False Alarms: Simulation and Arc Injection into a Real GSM-R Log" (S. E. Azizi, Z. Yu, S. Azizi). In the code, the margin-free likelihood (MFL in the article) is called TLRmix, and MFL-SR is TLRmixSR.
 
 Every table and figure in the article is computed from the JSON files in `out_v19/`, which these scripts write. Run all commands from the repository root.
 
@@ -61,3 +61,14 @@ The worker scripts take every second job of their job list and skip jobs whose o
 ## Seeds
 
 Held-out regimes use base 51 000 000 + 10 000 r + 1000 c, random regimes 61 000 000 + 10 000 i, the real-log train split seed 11, calibration splits 77 + s, and injections 2026 + s.
+
+## Analysis checks (added for the revised article)
+
+| Step | Command | Output |
+|---|---|---|
+| Efficiency of the Tobit and margin-free scores under both loss mechanisms (Proposition 5, Table II) | `python3 drift_robust.py` | `out_v19/drift_robust.json` |
+| Healthy likelihood against eta | `python3 eta_ident.py` | `out_v19/eta_ident.json` |
+| Healthy-period check with windowed baselines, 40 pre-registered regimes (Theorem 1, Table V, Fig. 1) | `bash theory_worker3.sh 0` and `bash theory_worker3.sh 1`, then `python3 theory3_analyze.py` | `out_v19/theory3/`, `out_v19/theory3_summary.json` |
+| Earlier 10-regime checks of Theorem 1 | `theory_flip.py`, `theory_flip2.py` with `theory_analyze.py`, `theory2_analyze.py` | `out_v19/theory*/` |
+
+`theory_worker3.sh` reads `theory3_jobs40.txt` (regimes 600 to 639); `theory3_jobs.txt` lists all 100 pre-registered regimes.
