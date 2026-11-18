@@ -72,3 +72,5 @@ Held-out regimes use base 51 000 000 + 10 000 r + 1000 c, random regimes 61 000 
 | Earlier 10-regime checks of Theorem 1 | `theory_flip.py`, `theory_flip2.py` with `theory_analyze.py`, `theory2_analyze.py` | `out_v19/theory*/` |
 
 `theory_worker3.sh` reads `theory3_jobs.txt` (regimes 600 to 699).
+| Window length of MFL-SR (W = 150, 300, 600 frames), 100 pre-registered regimes (Table 6) | `bash theory_workerW.sh 0` and `bash theory_workerW.sh 1`, then `python3 theoryW_analyze.py` | `out_v19/theoryW/`, `out_v19/theoryW_summary.json` |
+| Computing cost per frame of each detector | `python3 timing.py` | `out_v19/timing.json` |
