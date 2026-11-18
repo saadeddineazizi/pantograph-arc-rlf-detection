@@ -23,7 +23,7 @@ def theory():
     ax[0].set_xlabel('threshold $h$'); ax[0].set_ylabel('mean delay (frames)'); ax[0].legend(frameon=False); ax[0].set_title('(a) Abrupt change')
     T = [r['T'] for r in m['ramp']]
     ax[1].plot(T, [r['median'] for r in m['ramp']], 'o-', color=K, ms=3.5, lw=1, label='median alarm time')
-    ax[1].plot(T, [r['approx'] for r in m['ramp']], 's--', color=G, ms=3.5, lw=1, label='mean-path approximation (11)')
+    ax[1].plot(T, [r['approx'] for r in m['ramp']], 's--', color=G, ms=3.5, lw=1, label='mean-path approximation (9)')
     ax[1].set_xlabel('ramp length $T$ (frames)'); ax[1].set_ylabel('alarm time (frames)'); ax[1].legend(frameon=False); ax[1].set_title('(b) Linear ramp')
     for a in ax:
         for s in ('top', 'right'): a.spines[s].set_visible(False)

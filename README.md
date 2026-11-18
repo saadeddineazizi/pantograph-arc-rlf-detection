@@ -66,9 +66,9 @@ Held-out regimes use base 51 000 000 + 10 000 r + 1000 c, random regimes 61 000 
 
 | Step | Command | Output |
 |---|---|---|
-| Efficiency of the Tobit and margin-free scores under both loss mechanisms (Proposition 5, Table II) | `python3 drift_robust.py` | `out_v19/drift_robust.json` |
+| Efficiency of the Tobit and margin-free scores under both loss mechanisms (Proposition 5, Table 2) | `python3 drift_robust.py` | `out_v19/drift_robust.json` |
 | Healthy likelihood against eta | `python3 eta_ident.py` | `out_v19/eta_ident.json` |
-| Healthy-period check with windowed baselines, 40 pre-registered regimes (Theorem 1, Table V, Fig. 1) | `bash theory_worker3.sh 0` and `bash theory_worker3.sh 1`, then `python3 theory3_analyze.py` | `out_v19/theory3/`, `out_v19/theory3_summary.json` |
+| Healthy-period check with windowed baselines, all 100 pre-registered regimes (Theorem 1, Table 5, Fig. 1) | `bash theory_worker3.sh 0` and `bash theory_worker3.sh 1`, then `python3 theory3_analyze.py` | `out_v19/theory3/`, `out_v19/theory3_summary.json` |
 | Earlier 10-regime checks of Theorem 1 | `theory_flip.py`, `theory_flip2.py` with `theory_analyze.py`, `theory2_analyze.py` | `out_v19/theory*/` |
 
-`theory_worker3.sh` reads `theory3_jobs40.txt` (regimes 600 to 639); `theory3_jobs.txt` lists all 100 pre-registered regimes.
+`theory_worker3.sh` reads `theory3_jobs.txt` (regimes 600 to 699).
