@@ -1,6 +1,8 @@
 # Calibrated detection of pantograph-arcing radio link degradation
 
-Code and result files for the article "Margin-Free Detection of Pantograph-Arc Radio Link Degradation with Calibrated False Alarms: Simulation and Arc Injection into a Real GSM-R Log" (S. E. Azizi, Z. Yu, S. Azizi). In the code, the margin-free likelihood (MFL in the article) is called TLRmix, and MFL-SR is TLRmixSR.
+Code and result files for the article "Margin-Free Early Warning of Pantograph-Arc Radio Link Degradation: Field Calibration and Arc Injection on 70 Hours of Real GSM-R Data" (S. E. Azizi, Z. Yu, S. Azizi, Z.-Q. Zhang). In the code, the margin-free likelihood (MFL in the article) is called TLRmix, and MFL-SR is TLRmixSR.
+
+The technical report `technical_report.pdf` gives the full model, all proofs (Propositions S4 and S5 and Theorem S1 are Propositions 1 and 2 and Theorem 1 of the article) and the complete results, with every table computed from the files in this repository.
 
 Every table and figure in the article is computed from the JSON files in `out_v19/`, which these scripts write. Run all commands from the repository root.
 
@@ -66,11 +68,19 @@ Held-out regimes use base 51 000 000 + 10 000 r + 1000 c, random regimes 61 000 
 
 | Step | Command | Output |
 |---|---|---|
-| Efficiency of the Tobit and margin-free scores under both loss mechanisms (Proposition 5, Table 2) | `python3 drift_robust.py` | `out_v19/drift_robust.json` |
+| Efficiency of the Tobit and margin-free scores under both loss mechanisms (Proposition 2, Table II) | `python3 drift_robust.py` | `out_v19/drift_robust.json` |
 | Healthy likelihood against eta | `python3 eta_ident.py` | `out_v19/eta_ident.json` |
-| Healthy-period check with windowed baselines, all 100 pre-registered regimes (Theorem 1, Table 5, Fig. 1) | `bash theory_worker3.sh 0` and `bash theory_worker3.sh 1`, then `python3 theory3_analyze.py` | `out_v19/theory3/`, `out_v19/theory3_summary.json` |
+| Healthy-period check with windowed baselines, all 100 pre-registered regimes (Theorem 1, Table VI, Fig. 3) | `bash theory_worker3.sh 0` and `bash theory_worker3.sh 1`, then `python3 theory3_analyze.py` | `out_v19/theory3/`, `out_v19/theory3_summary.json` |
 | Earlier 10-regime checks of Theorem 1 | `theory_flip.py`, `theory_flip2.py` with `theory_analyze.py`, `theory2_analyze.py` | `out_v19/theory*/` |
-| Window length of MFL-SR (W = 150, 300, 600 frames), 100 pre-registered regimes (Table 6) | `bash theory_workerW.sh 0` and `bash theory_workerW.sh 1`, then `python3 theoryW_analyze.py` | `out_v19/theoryW/`, `out_v19/theoryW_summary.json` |
+| Window length of MFL-SR (W = 150, 300, 600 frames), 100 pre-registered regimes (reported in the text of the healthy-period test) | `bash theory_workerW.sh 0` and `bash theory_workerW.sh 1`, then `python3 theoryW_analyze.py` | `out_v19/theoryW/`, `out_v19/theoryW_summary.json` |
 | Computing cost per frame of each detector | `python3 timing.py` | `out_v19/timing.json` |
 
 `theory_worker3.sh` reads `theory3_jobs.txt` (regimes 600 to 699).
+
+## License
+
+The code in this repository is released under the MIT License (see `LICENSE`). The technical report `technical_report.pdf` is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). The SNCF data are not included; they keep their own license.
+
+## Citation
+
+If you use this code, please cite the article: S. E. Azizi, Z. Yu, S. Azizi and Z.-Q. Zhang, "Margin-Free Early Warning of Pantograph-Arc Radio Link Degradation: Field Calibration and Arc Injection on 70 Hours of Real GSM-R Data," submitted to IEEE Intelligent Transportation Systems Magazine.
