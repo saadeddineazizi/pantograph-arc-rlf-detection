@@ -1,0 +1,30 @@
+{
+  "title": "Code, results and technical report for \"Margin-Free Early Warning of Pantograph-Arc Radio Link Degradation: Field Calibration and Arc Injection on 70 Hours of Real GSM-R Data\"",
+  "upload_type": "software",
+  "description": "Code, frozen constants, registered hypotheses, real-log pipeline and result files behind every number of the article, with a technical report giving the full model, all proofs and the complete results.",
+  "creators": [
+    {
+      "name": "Azizi, Saad Eddine",
+      "affiliation": "Southwest Jiaotong University"
+    },
+    {
+      "name": "Yu, Zhibin",
+      "affiliation": "Southwest Jiaotong University"
+    },
+    {
+      "name": "Azizi, Selma",
+      "affiliation": "University of Genoa"
+    },
+    {
+      "name": "Zhang, Zhi-Qiang",
+      "affiliation": "University of Leeds"
+    }
+  ],
+  "keywords": [
+    "railway radio communication",
+    "pantograph arcing",
+    "sequential change detection",
+    "false-alarm calibration"
+  ],
+  "license": "MIT"
+}
